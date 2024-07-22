@@ -1,0 +1,6 @@
+@Y4Api_HostAddress = http://localhost:5287
+
+GET {{Y4Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

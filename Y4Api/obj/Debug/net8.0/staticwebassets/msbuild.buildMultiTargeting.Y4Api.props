@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Y4Api.props" />
+</Project>
