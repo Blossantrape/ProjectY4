@@ -106,3 +106,4 @@ C:\dev\repositories\ProjectY4\Y4Api\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.W
 C:\dev\repositories\ProjectY4\Y4Api\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\dev\repositories\ProjectY4\Y4Api\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\dev\repositories\ProjectY4\Y4Api\obj\Debug\net8.0\Y4Api.sourcelink.json
+C:\dev\repositories\ProjectY4\Y4Api\bin\Debug\net8.0\AutoMapper.dll

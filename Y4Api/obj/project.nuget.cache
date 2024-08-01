@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kz4TlbutYDI=",
+  "dgSpecHash": "JYSA3jZK9OU=",
   "success": true,
   "projectFilePath": "C:\\dev\\repositories\\ProjectY4\\Y4Api\\Y4Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tolik\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\tolik\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\tolik\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.5\\microsoft.aspnetcore.openapi.8.0.5.nupkg.sha512",
     "C:\\Users\\tolik\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
