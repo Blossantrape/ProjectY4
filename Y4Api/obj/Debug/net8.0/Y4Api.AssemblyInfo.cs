@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Y4Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+928fe54849bcc05321ee8a713b6779bd3962617c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+746ecef274770bb499c33d23413546b5b4f79f90")]
 [assembly: System.Reflection.AssemblyProductAttribute("Y4Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Y4Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

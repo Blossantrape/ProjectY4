@@ -13,12 +13,12 @@ namespace Y4Api.Controllers;
 public class StudentController:ControllerBase
 {
     private readonly AppDbContext _context;
-    private readonly IMapper _mapper;
+    //private readonly IMapper _mapper;
     
-    public StudentController(AppDbContext context, IMapper mapper)
+    public StudentController(AppDbContext context/*, IMapper mapper*/)
     {
         _context = context;
-        _mapper = mapper;
+        //_mapper = mapper;
     }
 
     // Создание студента.
@@ -34,8 +34,9 @@ public class StudentController:ControllerBase
     public async Task<ActionResult<IEnumerable<StudentResponse>>> GetStudents()
     {
         var students = await _context.Students.AsNoTracking().ToListAsync();
-        var studentResponse = _mapper.Map<IEnumerable<StudentResponse>>(students);
-        return Ok(studentResponse);
+        /*var studentResponse = _mapper.Map<IEnumerable<StudentResponse>>(students);
+        return Ok(studentResponse);*/
+        return Ok(students);
     }
 
     // Получить всех студентов.
@@ -81,7 +82,7 @@ public class StudentController:ControllerBase
 
         var result = await _context.SaveChangesAsync();
         if (result > 0)
-            return Ok("Student deleted");
+            return Ok();
         return BadRequest("Unable to delete student");
     }
 
@@ -105,9 +106,9 @@ public class StudentController:ControllerBase
 
         if (result > 0)
         {
-            return Ok("Student updated");
+            return Ok();
         }
         
-        return BadRequest("Unable to update student");
+        return BadRequest();
     }
 }

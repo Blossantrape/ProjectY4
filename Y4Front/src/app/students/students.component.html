@@ -1,23 +1,65 @@
 <div class="p-10">
   <h1 class="text-2xl font-semibold mb-10">All Students</h1>
+  <div class="flex justify-between items-center">
+    <a [routerLink]="'/students/form'" class="bg-blue-500 text-white rounded-md px-5 py-2">Add new</a>
+  </div>
   <div class="grid grid-cols-4 gap-5">
     @for (item of (students$ | async); track item) {
-      <div class="shadow rounded-md p-3">
-        <div class="flex gap-5 items-center">
+      <div class="shadow w-full rounded-md p-3">
+        <div class="flex items-center justify-between">
+          <div class="flex time-center gap-4">
+            <div
+              class="bg-blue-500 rounded-full p-5 w-10 h-10 flex justify-center items-center text-white font-bold">
+              {{ item.Name[0].toUpperCase() }}
+            </div>
+            <div>
+              <h1 class="text-xl">
+                {{ item.Name | titlecase}}
+              </h1>
+              <div class="flex items-center <!--justify-between--> gap-2 mt-2 mb-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                  <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+                <h4 class="text-gray-500">
+                  {{item.Address}}
+                </h4>
 
-        <div class="bg-blue-500 rounded-full p-5 w-10 h-10 flex justify-center items-center text-white font-bold">
-          {{ item.Name[0].toUpperCase() }}
-        </div>
-        <div>
-          <h1 class="text-xl">
-            {{ item.Name }}
-          </h1>
-          <h4 class="text-gray-500">
-            {{item.Address}}
-          </h4>
-        </div>
+              </div>
+              <div class="flex items-center text-gray-500 gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                </svg>
+                <h4 class="text-gray-500">
+                  {{item.PhoneNumber | titlecase}}
+                </h4>
+              </div>
+              <div class="flex items-center text-gray-500 gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                </svg>
+                <h4 class="text-gray-500">
+                  {{item.Email | titlecase}}
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-5">
+            <a [routerLink]="['/students/', item.Id]" class="p-3 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+              </svg>
+            </a>
+            <button
+              (click)="delete(item.Id)"
+              class="bg-red-400 text-white p-3 rounded-full hover:bg-red-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+              </svg>
+            </button>
+          </div>
       </div>
-
       </div>
     }
   </div>
